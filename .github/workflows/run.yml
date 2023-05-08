@@ -16,9 +16,13 @@ jobs:
       - name: 🚀 Run
         shell: bash
         run: |
-          doxygen -g
-          doxygen
-      - uses: actions/upload-artifact@v3
+          python3 main.py
+
+      - name: Doxygen
+        uses: mattnotmitt/doxygen-action@v1.9.5
+
+      - name:
+        uses: actions/upload-artifact@v3
         with:
           name: doxygen
           path: html/
